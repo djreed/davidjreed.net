@@ -1,4 +1,3 @@
-# Build stage :: iron/go:dev is the alpine image with the go tools added
 FROM golang:1.8
 
 # Add the source code:
@@ -20,4 +19,4 @@ COPY --from=0 /app/ .
 
 CMD ["/app/davidjreed.net"]
 
-EXPOSE 80
+EXPOSE 8080

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -28,8 +29,8 @@ func main() {
 
 	router.HandleFunc("/", HomeHandler).Methods("GET")
 
-	log.Printf("Listening on port: %v\n", 80)
-	log.Fatal(http.ListenAndServe(":80", router))
+	log.Printf("Listening on port: %v\n", 8080)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", 8080), router))
 }
 
 func ServeStatic(router *mux.Router, staticDirectory string) {
