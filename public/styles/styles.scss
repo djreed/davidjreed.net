@@ -47,6 +47,15 @@ ul {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.social-icon {
+  width: 5vw;
+}
+
 .json {
   user-select: none;
 
@@ -59,16 +68,10 @@ ul {
     margin: 0.5em 0 0.5em 0;
   }
 
-  &__array-start {
-    margin: 0.5em 0 0 0;
-  }
-
-  &__array-item {
-    margin: 0 0 0 1em;
-  }
-
-  &__array-end {
-    margin: 0 0 0.5em 0;
+  &__array {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
