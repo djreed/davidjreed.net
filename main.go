@@ -17,9 +17,12 @@ func init() {
 
 func loadTemplates() {
 	var baseTemplate = "templates/layout/_base.html"
+
 	templates = make(map[string]*template.Template)
 
-	templates["index"] = template.Must(template.ParseFiles(baseTemplate, "templates/home/index.html"))
+	templates["about"] = template.Must(template.ParseFiles(baseTemplate,
+		"templates/home/index.html",
+		"templates/home/about.html"))
 }
 
 func main() {
@@ -47,7 +50,7 @@ func ServeStatic(router *mux.Router, staticDirectory string) {
 }
 
 func HomeHandler(res http.ResponseWriter, req *http.Request) {
-	if err := templates["index"].Execute(res, nil); err != nil {
+	if err := templates["about"].Execute(res, nil); err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 	}
 }

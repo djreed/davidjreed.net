@@ -33,9 +33,12 @@ ul {
   list-style-type:        none;
 }
 
+
+
 .card {
   z-index: 2;
 
+  flex: 0;
   display:          inline-block;
   background-color: $card-color;
   border-style: solid;
@@ -90,4 +93,15 @@ section {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#main-content {
+  display:flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width:768px) {
+  #main-content {
+    flex-direction: column;
+  }
 }
